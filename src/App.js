@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Container } from "@mui/system";
+import Catagory from "./components/Catagory";
+import Search from "./components/Search";
+import Pages from "./pages/Pages";
+import { GiKnifeFork } from 'react-icons/gi'
+import { Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth='xl'>
+      <div style={{ marginTop: '2rem' }}>
+        <Link to={'/'} style={{ display: 'flex', textDecoration: 'none' }}>
+          <GiKnifeFork style={{ fontSize: '2rem' }} />
+          <Typography variant={'h5'} component={'h5'}>Delicious</Typography>
+        </Link>
+      </div>
+      <Search />
+      <Catagory />
+      <Pages />
+    </Container>
+
   );
 }
 
